@@ -1,0 +1,117 @@
+<div class="center bkg-image-auth">
+  <div class="card-wrapper-auth card-wrapper-registration w-700-auth">
+    <div class="desc-medium">Popunite formu da bi ste se registrovali</div>
+    <br />
+    <form #registrationForm="ngForm" autocomplete="off">
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail adresa</mat-label>
+          <input
+            matInput
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="user.email"
+            #email="ngModel"
+            required
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Lozinka</mat-label>
+            <input
+              matInput
+              type="password"
+              id="pass"
+              name="pass"
+              [(ngModel)]="user.pass"
+              #pass="ngModel"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Ponovite lozinku</mat-label>
+            <input
+              matInput
+              type="password"
+              id="pass2"
+              name="pass2"
+              [(ngModel)]="user.pass2"
+              #pass2="ngModel"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Ime</mat-label>
+            <input
+              matInput
+              type="text"
+              id="ime"
+              name="ime"
+              [(ngModel)]="user.ime"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Prezime</mat-label>
+            <input
+              matInput
+              type="text"
+              id="prezime"
+              name="prezime"
+              [(ngModel)]="user.prezime"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Broj telefona</mat-label>
+            <input
+              matInput
+              type="text"
+              id="telefon"
+              name="telefon"
+              [(ngModel)]="user.telefon"
+              #telefon="ngModel"
+              pattern="([+]?\d{1,2}[.-\s]?)?(\d{3}[.-]?){2}\d{3}"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label
+            >Adresa (Primer: Novi Sad, Bulevar Oslobodjenja 13)</mat-label
+          >
+
+          <input
+            matInput
+            type="text"
+            id="adresa"
+            name="adresa"
+            [(ngModel)]="user.adresa"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="center">
+        <button class="primary-button" (click)="register()">Registruj</button>
+      </div>
+    </form>
+  </div>
+</div>

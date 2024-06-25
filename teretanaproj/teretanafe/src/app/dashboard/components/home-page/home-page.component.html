@@ -1,0 +1,69 @@
+<div class="center bkg-image-auth">
+  <div class="card-wrapper-auth card-wrapper-registration w-1500-auth">
+    <div class="desc-medium">
+      Popunite formu da bi ucitali <b>statistiku.</b>
+    </div>
+    <br />
+    <form #statisticForm="ngForm" autocomplete="off">
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Odaberite mesec (1-12)</mat-label>
+            <mat-select
+              name="month"
+              [value]="month"
+              [(ngModel)]="month"
+              required
+            >
+              <mat-option *ngFor="let m of months" [value]="m">
+                {{ m }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Odaberite godinu)</mat-label>
+            <mat-select name="year" [value]="year" [(ngModel)]="year" required>
+              <mat-option *ngFor="let y of years" [value]="year">
+                {{ y }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="center">
+        <button class="primary-button" (click)="ucitaj()">Ucitaj</button>
+      </div>
+    </form>
+    <br />
+    <br />
+    <div *ngFor="let week of statistic | keyvalue">
+      <h3>Week: {{ week.key }}</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Total Training</th>
+            <th>Total Trajanje</th>
+            <th>Prosek Tezina</th>
+            <th>Prosek Umor</th>
+            <th>Total Kalorije</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ week.value?.totalTrening }}</td>
+            <td>{{ week.value?.totalTrajanje }}</td>
+            <td>{{ week.value?.avgTezina }}</td>
+            <td>{{ week.value?.avgUmor }}</td>
+            <td>{{ week.value?.totalKalorije }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

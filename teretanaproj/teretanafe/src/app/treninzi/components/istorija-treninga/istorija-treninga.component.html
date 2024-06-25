@@ -1,0 +1,80 @@
+<div class="center bkg-image-auth">
+  <div class="table-wrapper box-shadow">
+    <mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="datum">
+        <mat-header-cell *matHeaderCellDef>Datum </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="datum">{{
+          element.datum
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="vrsta">
+        <mat-header-cell *matHeaderCellDef>Vrsta </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="vrsta">{{
+          element.vrsta
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="tip">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>Tip</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element" data-label="tip">{{
+          element.tip
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="trajanje">
+        <mat-header-cell mat-header-cell *matHeaderCellDef
+          >Trajanje</mat-header-cell
+        >
+        <mat-cell mat-cell *matCellDef="let element" data-label="trajanje">{{
+          element.trajanje
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="kalorije">
+        <mat-header-cell mat-header-cell *matHeaderCellDef
+          >Kalorije</mat-header-cell
+        >
+        <mat-cell mat-cell *matCellDef="let element" data-label="kalorije">{{
+          element.kalorije
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="tezina">
+        <mat-header-cell mat-header-cell *matHeaderCellDef
+          >Tezina</mat-header-cell
+        >
+        <mat-cell mat-cell *matCellDef="let element" data-label="tezina">{{
+          element.tezina
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="umor">
+        <mat-header-cell mat-header-cell *matHeaderCellDef
+          >Umor</mat-header-cell
+        >
+        <mat-cell mat-cell *matCellDef="let element" data-label="umor">{{
+          element.umor
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="beleska">
+        <mat-header-cell mat-header-cell *matHeaderCellDef
+          >Beleska</mat-header-cell
+        >
+        <mat-cell mat-cell *matCellDef="let element" data-label="beleska">{{
+          element.beleska
+        }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="akcija">
+        <mat-header-cell mat-header-cell *matHeaderCellDef
+          >akcija</mat-header-cell
+        >
+        <mat-cell mat-cell *matCellDef="let element" data-label="akcija">
+          <button mat-button (click)="remove(element.id)">X</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      [pageSizeOptions]="[10, 20, 30]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>

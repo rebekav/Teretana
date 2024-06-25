@@ -1,0 +1,138 @@
+<div class="center bkg-image-auth">
+  <div class="card-wrapper-auth card-wrapper-registration w-1500-auth">
+    <div class="desc-medium">Popunite formu da bi kreirali <b>trening.</b></div>
+    <br />
+    <form #dodajTreningForm="ngForm" autocomplete="off">
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Podaci o vrsti treninga</mat-label>
+          <input
+            matInput
+            type="text"
+            id="vrsta"
+            name="vrsta"
+            [(ngModel)]="trening.vrsta"
+            #vrsta="ngModel"
+            required
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Unesite belesku</mat-label>
+          <input
+            matInput
+            type="text"
+            id="beleska"
+            name="beleska"
+            [(ngModel)]="trening.beleska"
+            #beleska="ngModel"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Tip</mat-label>
+            <mat-select
+              name="tip"
+              [value]="trening.tip"
+              [(ngModel)]="trening.tip"
+              #tip="ngModel"
+              required
+            >
+              <mat-option *ngFor="let t of tipovi" [value]="t">
+                {{ t }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Trajanje (min)</mat-label>
+            <input
+              matInput
+              type="number"
+              id="trening"
+              name="trening"
+              [(ngModel)]="trening.trajanje"
+              #trajanje="ngModel"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Kalorije</mat-label>
+            <input
+              matInput
+              type="number"
+              id="kalorije"
+              name="kalorije"
+              [(ngModel)]="trening.kalorije"
+              #kalorije="ngModel"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Odaberite tezinu (1-10)</mat-label>
+            <mat-select
+              name="tezina"
+              [value]="trening.tezina"
+              [(ngModel)]="trening.tezina"
+              #tezina="ngModel"
+              required
+            >
+              <mat-option *ngFor="let t of tezine" [value]="t">
+                {{ t }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Datum</mat-label>
+            <input
+              matInput
+              type="date"
+              id="datum"
+              name="datum"
+              [(ngModel)]="trening.datum"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Odaberite umor (1-10)</mat-label>
+            <mat-select
+              name="umor"
+              [value]="trening.umor"
+              [(ngModel)]="trening.umor"
+              #umor="ngModel"
+              required
+            >
+              <mat-option *ngFor="let t of tezine" [value]="t">
+                {{ t }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="center">
+        <button class="primary-button" (click)="create()">Dodaj trening</button>
+      </div>
+    </form>
+  </div>
+</div>

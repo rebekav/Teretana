@@ -1,0 +1,56 @@
+<mat-sidenav-container class="example-container" position="end">
+  <mat-sidenav-content position="end">
+    <mat-toolbar>
+      <div>
+        <button
+          mat-button
+          *ngIf="!!roleKorisnik"
+          [routerLink]="['/home']"
+          routerLinkActive="active-route"
+        >
+          Početna
+        </button>
+        <button
+          mat-button
+          *ngIf="!!roleKorisnik"
+          [routerLink]="['/treninzi']"
+          routerLinkActive="active-route"
+        >
+          Istorija treninga
+        </button>
+
+        <button
+          mat-button
+          *ngIf="!!roleKorisnik"
+          [routerLink]="['/treninzi/dodaj-trening']"
+          routerLinkActive="active-route"
+        >
+          Dodaj trening
+        </button>
+      </div>
+      <span class="menu-spacer"></span>
+
+      <button
+        mat-button
+        *ngIf="!roleKorisnik"
+        [routerLink]="['/auth']"
+        routerLinkActive="active-route"
+      >
+        Prijava
+      </button>
+
+      <button *ngIf="roleKorisnik" mat-button [matMenuTriggerFor]="beforeMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item [routerLink]="['/auth']" (click)="logout()">
+          Logout
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <div class="mt-8vh">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

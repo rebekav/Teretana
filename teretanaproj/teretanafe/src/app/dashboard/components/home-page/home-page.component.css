@@ -1,0 +1,44 @@
+.h1 {
+    display: inline-flex;
+  }
+  
+  .bkg-image-auth {
+    background-image: url("https://images.unsplash.com/photo-1585314062604-1a357de8b000?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80");
+    margin: 0;
+    width: 100%;
+    height: 91.5vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+  }
+  
+  .center {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .primary-link {
+    font-weight: 500;
+    color: orange;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  /* weekly-statistics.component.css */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #D27D2D;
+    padding: 8px;
+  }
+  
+  .table th {
+    background-color: #D27D2D;
+    text-align: left;
+  }
+  
